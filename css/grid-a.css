@@ -1,0 +1,27 @@
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Padding around the grid */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+/* For iframes and Instagram media, they need to be responsive */
+.portfolio-grid iframe,
+.portfolio-grid .instagram-media {
+    width: 100%; /* Use 100% of the column width */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    box-sizing: border-box; /* Include padding and borders in the element's total width */
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Stack items in a single column on smaller screens */
+    }
+}
+
+/* Additional responsive settings for Instagram, if necessary */
+.portfolio-grid .instagram-media {
+    /* If Instagram embeds have a fixed aspect ratio, this will need to be handled separately */
+    aspect-ratio: 1; /* Adjust this based on the actual aspect ratio of the Instagram embed */
+}
